@@ -64,7 +64,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
     <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <Box
         sx={{
-          p: 3,
+          p: 2,
           display: 'flex',
           alignItems: 'center',
           gap: 2,
@@ -95,7 +95,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         </Box>
       </Box>
 
-      <List sx={{ flex: 1, py: 2, px: 1 }}>
+      <List sx={{ flex: 1, py: 1, px: 1 }}>
         {menuItems.map((item) => (
           <ListItem key={item.text} disablePadding sx={{ mb: 0.5 }}>
             <ListItemButton
@@ -131,7 +131,6 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
           p: 2,
           borderTop: '1px solid',
           borderColor: 'divider',
-          bgcolor: 'background.default',
         }}
       >
         <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center', fontSize: 11 }}>
@@ -153,8 +152,6 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
           width: DRAWER_WIDTH,
           boxSizing: 'border-box',
           border: 'none',
-          borderRight: '1px solid',
-          borderColor: 'divider',
         },
       }}
     >

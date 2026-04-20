@@ -23,17 +23,17 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'background.default' }}>
       <Header onMenuClick={handleDrawerToggle} />
-      
+
       <Sidebar open={mobileOpen} onClose={handleDrawerToggle} />
-      
+
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
-          pt: 10,
-          width: { md: `calc(100% - ${DRAWER_WIDTH}px)` },
-          ml: { md: `${DRAWER_WIDTH}px` },
+          p: 0,
+          pt: 9,
+          width: { xs: '100%', md: `calc(100% - ${DRAWER_WIDTH - 150}px)` },
+          ml: { xs: 0, sm: 0, md: `${DRAWER_WIDTH - 150}px` },
           minHeight: '100vh',
         }}
       >
