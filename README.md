@@ -1,37 +1,42 @@
-# Society Management System
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4f46e5,100:7c3aed&height=250&section=header&text=Society%20Management%20System&fontSize=55&animation=fadeIn&desc=A%20modern%20web%20app%20for%20residential%20society%20operations&descAlignY=55&descAlign=Center" />
+</p>
 
-A modern web application for managing residential society operations, built with Next.js, React, and Material-UI.
+<div align="center">
 
-![Next.js](https://img.shields.io/badge/Next.js-16.2.3-black?style=flat&logo=next.js)
-![React](https://img.shields.io/badge/React-19.2.4-black?style=flat&logo=react)
-![Material-UI](https://img.shields.io/badge/MUI-9.0.0-black?style=flat&logo=mui)
+![Next.js](https://img.shields.io/badge/Next.js-16.2.3-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.2.4-black?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-black?style=for-the-badge&logo=typescript)
+![Material-UI](https://img.shields.io/badge/MUI-9.0.0-black?style=for-the-badge&logo=mui)
 
-## Features
+</div>
 
-- **Dashboard** - Overview of society statistics and recent activities
-- **Flats Management** - Manage residential units and resident information
-- **Complaints** - Track and resolve resident complaints
-- **Notices** - Post and view society announcements
-- **Finance** - Track maintenance bills and payments
-- **Vehicles** - Manage registered vehicles and parking
-- **Visitors** - Log and track visitor entries
+---
 
-## Tech Stack
+## 📋 Features
 
-- **Frontend**: Next.js 16, React 19, TypeScript
-- **UI Framework**: Material-UI (MUI) v9
-- **Charts**: Recharts
-- **Date Handling**: date-fns
-- **PWA**: Service Worker support
+| Module | Description |
+|--------|-------------|
+| 🏠 **Dashboard** | Overview of society statistics, charts & recent activities |
+| 🏢 **Flats Management** | Manage residential units & resident information |
+| 📝 **Complaints** | Track & resolve resident complaints |
+| 📢 **Notices** | Post & view society announcements |
+| 💰 **Finance** | Track maintenance bills & payments |
+| 🚗 **Vehicles** | Manage registered vehicles & parking |
+| 👥 **Visitors** | Log & track visitor entries |
 
-## Getting Started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+| Tool | Version |
+|------|---------|
+| Node.js | 18+ |
+| npm | 9+ |
 
-### Installation
+### Quick Setup
 
 ```bash
 # Clone the repository
@@ -47,44 +52,89 @@ npm install
 npm run dev
 ```
 
-The application will be available at `http://localhost:3000`.
+> 🌐 Open **http://localhost:3000** in your browser
 
-### Build for Production
+### Production Build
 
 ```bash
-npm run build
-npm run start
+npm run build    # Build for production
+npm run start    # Start production server
 ```
 
-## Project Structure
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Next.js 16 (App Router)
+- **UI Library**: React 19
+- **Language**: TypeScript
+- **Styling**: MUI v9 + Tailwind CSS
+
+### Libraries
+- **Charts**: Recharts
+- **Dates**: date-fns
+- **IDs**: uuid
+- **PWA**: Service Worker
+
+---
+
+## 📁 Project Structure
 
 ```
 society-management/
-├── public/                  # Static assets
-│   ├── manifest.json       # PWA manifest
-│   └── icon-192.svg       # App icon
+├── public/
+│   ├── manifest.json      # PWA manifest
+│   └── icon-192.svg     # App icon
 ├── src/
-│   ├── app/               # Next.js App Router
-│   │   ├── complaints/   # Complaints module
-│   │   ├── dashboard/    # Dashboard module
-│   │   ├── finance/      # Finance module
-│   │   ├── flats/        # Flats management
-│   │   ├── notices/      # Notices module
-│   │   ├── vehicles/     # Vehicles module
-│   │   ├── visitors/     # Visitors module
-│   │   ├── layout.tsx    # Root layout
-│   │   └── page.tsx      # Home page
-│   ├── components/       # Reusable components
-│   ├── context/          # React Context providers
-│   ├── data/             # Seed data
-│   ├── services/         # Business logic
-│   ├── theme.ts          # MUI theme configuration
-│   └── types/            # TypeScript definitions
+│   ├── app/             # Next.js App Router
+│   │   ├── complaints/ # 👎 Complaints module
+│   │   ├── dashboard/  # 📊 Dashboard module
+│   │   ├── finance/    # 💵 Finance module
+│   │   ├── flats/     # 🏢 Flats management
+│   │   ├── notices/   # 📢 Notices module
+│   │   ├── vehicles/ # 🚗 Vehicles module
+│   │   ├── visitors/  # 👥 Visitors module
+│   │   ├── layout.tsx # Root layout
+│   │   └── page.tsx   # Home page
+│   ├── components/    # Reusable components
+│   ├── context/       # React Context
+│   ├── data/         # Seed data
+│   ├── services/     # Business logic
+│   ├── theme.ts      # MUI theme
+│   └── types/       # TypeScript types
 ├── package.json
-├── tsconfig.json
 └── README.md
 ```
 
-## License
+---
 
-MIT License
+## 📸 Screenshots
+
+| Dashboard | Flats | Complaints |
+|:---------:|:----:|:----------:|
+| ![Dashboard](./public/screenshots/dashboard.png) | ![Flats](./public/screenshots/flats.png) | ![Complaints](./public/screenshots/complaints.png) |
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+</p>
+
+---
+
+<p align="center">
+  <sub>Built with ❤️ using Next.js & Material-UI</sub>
+</p>
