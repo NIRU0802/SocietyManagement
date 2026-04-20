@@ -15,21 +15,35 @@ A modern web application for managing residential society operations.
 
 ## Features
 
-- **Dashboard** - Overview of society statistics, charts & recent activities
-- **Flats Management** - Manage residential units & resident information
-- **Complaints** - Track & resolve resident complaints
-- **Notices** - Post & view society announcements
-- **Finance** - Track maintenance bills & payments
-- **Vehicles** - Manage registered vehicles & parking
-- **Visitors** - Log & track visitor entries
+| Module | Description |
+|--------|-------------|
+| 🏠 **Dashboard** | Overview of society statistics, charts & recent activities |
+| 🏢 **Flats Management** | Manage residential units & resident information |
+| 📝 **Complaints** | Track & resolve resident complaints |
+| 📢 **Notices** | Post & view society announcements |
+| 💰 **Finance** | Track maintenance bills & payments |
+| 🚗 **Vehicles** | Manage registered vehicles & parking |
+| 👥 **Visitors** | Log & track visitor entries |
 
 ---
 
-## Quick Start
+## Prerequisites
+
+| Tool | Version |
+|------|---------|
+| Node.js | 18+ |
+| npm | 9+ |
+
+---
+
+## Quick Setup
 
 ```bash
 # Clone the repository
 git clone https://github.com/NIRU0802/SocietyManagement.git
+
+# Navigate to project directory
+cd SocietyManagement
 
 # Install dependencies
 npm install
@@ -38,21 +52,34 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+> 🌐 Open **http://localhost:3000** in your browser
+
+### Production Build
+
+```bash
+npm run build    # Build for production
+npm run start   # Start production server
+```
 
 ---
 
 ## Tech Stack
 
-| Technology | Description |
-|------------|-------------|
-| Next.js 16 | Framework (App Router) |
-| React 19 | UI Library |
-| TypeScript | Language |
-| Material-UI v9 | Component Library |
-| Recharts | Charts |
-| date-fns | Date Handling |
-| Tailwind CSS | Styling |
+### Frontend
+| | |
+|--|--|
+| ![Next.js](https://img.shields.io/badge/Next.js-16.2.3-black?logo=next.js) | **Next.js 16** - App Router Framework |
+| ![React](https://img.shields.io/badge/React-19.2.4-black?logo=react) | **React 19** - UI Library |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-5-black?logo=typescript) | **TypeScript** - Language |
+| ![Material-UI](https://img.shields.io/badge/MUI-9.0.0-black?logo=mui) | **Material-UI v9** - Component Library |
+
+### Libraries
+| | |
+|--|--|
+| ![Recharts](https://img.shields.io/badge/Recharts-3.8.1-black) | **Recharts** - Charts |
+| ![date-fns](https://img.shields.io/badge/date--fns-4.1.0-black) | **date-fns** - Date Handling |
+| ![Tailwind](https://img.shields.io/badge/Tailwind--4-black) | **Tailwind CSS** - Styling |
+| ![PWA](https://img.shields.io/badge/PWA-Support-black) | **Service Worker** - PWA Support |
 
 ---
 
@@ -60,27 +87,28 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```
 society-management/
-├── public/
-│   ├── manifest.json
-│   └── icon-192.svg
+├── public/                  # Static assets
+│   ├── manifest.json       # PWA manifest
+│   └── icon-192.svg       # App icon
 ├── src/
-│   ├── app/               # Next.js pages
-│   │   ├── complaints/
-│   │   ├── dashboard/
-│   │   ├── finance/
-│   │   ├── flats/
-│   │   ├── notices/
-│   │   ├── vehicles/
-│   │   ├── visitors/
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── components/        # Reusable components
-│   ├── context/          # React Context
-│   ├── data/             # Seed data
-│   ├── services/         # Business logic
-│   ├── theme.ts          # MUI theme
-│   └── types/            # TypeScript types
+│   ├── app/               # Next.js App Router
+│   │   ├── complaints/   # 📝 Complaints module
+│   │   ├── dashboard/    # 🏠 Dashboard module
+│   │   ├── finance/      # 💰 Finance module
+│   │   ├── flats/        # 🏢 Flats management
+│   │   ├── notices/      # 📢 Notices module
+│   │   ├── vehicles/     # 🚗 Vehicles module
+│   │   ├── visitors/     # 👥 Visitors module
+│   │   ├── layout.tsx    # Root layout
+│   │   └── page.tsx      # Home page
+│   ├── components/       # 📦 Reusable components
+│   ├── context/         # React Context providers
+│   ├── data/            # Seed data
+│   ├── services/        # Business logic
+│   ├── theme.ts         # MUI theme configuration
+│   └── types/           # TypeScript definitions
 ├── package.json
+├── tsconfig.json
 └── README.md
 ```
 
