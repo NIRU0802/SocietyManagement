@@ -52,11 +52,11 @@ export default function VisitorsPage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const { getAllVisitors, getFlats, addVisitor, checkOutVisitor } = useApp();
-  
+
   const [openDialog, setOpenDialog] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState<string>('all');
-  
+
   const [newVisitor, setNewVisitor] = useState({
     flatId: '',
     flatNumber: '',
@@ -104,7 +104,7 @@ export default function VisitorsPage() {
 
   return (
     <MainLayout>
-      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
+      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mr: 1 }}>
         <Typography variant="h2">Visitor Management</Typography>
         <Button
           variant="contained"
@@ -194,8 +194,8 @@ export default function VisitorsPage() {
                     <Chip label={visitor.flatNumber} size="small" variant="outlined" />
                   </TableCell>
                   <TableCell>
-                    <Chip 
-                      label={purposeLabels[visitor.purpose]} 
+                    <Chip
+                      label={purposeLabels[visitor.purpose]}
                       size="small"
                       color={visitor.purpose === 'delivery' ? 'primary' : visitor.purpose === 'guest' ? 'secondary' : 'default'}
                     />
@@ -218,8 +218,8 @@ export default function VisitorsPage() {
                     )}
                   </TableCell>
                   <TableCell>
-                    <Chip 
-                      label={visitor.status === 'inside' ? 'Inside' : 'Exited'} 
+                    <Chip
+                      label={visitor.status === 'inside' ? 'Inside' : 'Exited'}
                       size="small"
                       color={getStatusColor(visitor.status)}
                     />
@@ -254,8 +254,8 @@ export default function VisitorsPage() {
                 label="Flat"
                 onChange={(e) => {
                   const flat = flats.find(f => f.id === e.target.value);
-                  setNewVisitor({ 
-                    ...newVisitor, 
+                  setNewVisitor({
+                    ...newVisitor,
                     flatId: e.target.value,
                     flatNumber: flat?.flatNumber || '',
                   });

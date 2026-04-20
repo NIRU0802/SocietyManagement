@@ -72,7 +72,7 @@ export default function NoticesPage() {
 
   return (
     <MainLayout>
-      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
+      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mr: 1 }}>
         <Typography variant="h2">Notice Board</Typography>
         <Button
           variant="contained"

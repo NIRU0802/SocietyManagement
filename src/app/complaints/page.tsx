@@ -96,7 +96,7 @@ export default function ComplaintsPage() {
 
   return (
     <MainLayout>
-      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
+      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mr: 1 }}>
         <Typography variant="h2">Complaints</Typography>
         <Button
           variant="contained"

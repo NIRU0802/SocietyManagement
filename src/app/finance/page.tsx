@@ -169,7 +169,7 @@ export default function FinancePage() {
     <MainLayout>
       <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
         <Typography variant="h2">Finance & Accounting</Typography>
-        <Box sx={{ display: 'flex', gap: 2 }}>
+        <Box sx={{ display: 'flex', gap: 2, mr: 1 }}>
           <Button
             variant="outlined"
             startIcon={<AddIcon />}

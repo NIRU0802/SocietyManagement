@@ -33,7 +33,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
           p: 0,
           pt: 9,
           width: { xs: '100%', md: `calc(100% - ${DRAWER_WIDTH - 150}px)` },
-          ml: { xs: 0, sm: 0, md: `${DRAWER_WIDTH - 150}px` },
+          ml: { xs: 0, sm: 0, md: `${DRAWER_WIDTH - 200}px` },
           minHeight: '100vh',
         }}
       >

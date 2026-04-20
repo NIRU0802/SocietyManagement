@@ -34,6 +34,7 @@ import {
   Phone as PhoneIcon,
   DirectionsCar as CarIcon,
   People as PeopleIcon,
+  Apartment as ApartmentIcon,
 } from '@mui/icons-material';
 import { useSearchParams } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
@@ -60,11 +61,11 @@ function FlatsContent() {
   const searchParams = useSearchParams();
   const tabParam = searchParams.get('tab');
   const initialTab = tabParam === 'members' ? 1 : 0;
-  
+
   const [tabValue, setTabValue] = useState(initialTab);
   const [openDialog, setOpenDialog] = useState(false);
   const [openMemberDialog, setOpenMemberDialog] = useState(false);
-  
+
   const [newFlat, setNewFlat] = useState({
     flatNumber: '',
     block: 'A',
@@ -104,9 +105,9 @@ function FlatsContent() {
 
   return (
     <MainLayout>
-      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
+      <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
         <Typography variant="h2">Flats & Members</Typography>
-        <Box sx={{ display: 'flex', gap: 2 }}>
+        <Box sx={{ display: 'flex', gap: 1, mr: 1 }}>
           <Button variant="outlined" startIcon={<AddIcon />} onClick={() => setOpenMemberDialog(true)}>Add Member</Button>
           <Button variant="contained" startIcon={<AddIcon />} onClick={() => setOpenDialog(true)}>Add Flat</Button>
         </Box>
@@ -124,7 +125,7 @@ function FlatsContent() {
           <Box sx={{ p: 2 }}>
             <Grid container spacing={2}>
               {flats.map((flat, index) => (
-                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                   <Card variant="outlined" sx={{ cursor: 'pointer', transition: 'all 0.2s', '&:hover': { borderColor: 'primary.main', boxShadow: 2 } }}>
                     <CardContent sx={{ p: 2.5 }}>
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
@@ -154,37 +155,33 @@ function FlatsContent() {
         </TabPanel>
 
         <TabPanel value={tabValue} index={1}>
-          <TableContainer>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Flat</TableCell>
-                  <TableCell>Phone</TableCell>
-                  <TableCell>Relation</TableCell>
-                  <TableCell>Type</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {members.map((member, index) => (
-                  <TableRow key={index} hover>
-                    <TableCell>
-                      <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                        {member.name}
-                        {member.isPrimary && <Chip label="Primary" size="small" sx={{ ml: 1 }} color="primary" />}
-                      </Typography>
-                    </TableCell>
-                    <TableCell>{flats.find(f => f.id === member.flatId)?.flatNumber || '-'}</TableCell>
-                    <TableCell>{member.phone}</TableCell>
-                    <TableCell sx={{ textTransform: 'capitalize' }}>{member.relation}</TableCell>
-                    <TableCell>
-                      <Chip label={member.relation === 'owner' ? 'Owner' : member.relation === 'tenant' ? 'Tenant' : 'Family'} size="small" color={member.relation === 'owner' ? 'primary' : member.relation === 'tenant' ? 'warning' : 'default'} />
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+          <Box sx={{ p: 2 }}>
+            <Grid container spacing={2}>
+              {members.map((member, index) => (
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+                  <Card variant="outlined" sx={{ cursor: 'pointer', transition: 'all 0.2s', '&:hover': { borderColor: 'primary.main', boxShadow: 2 } }}>
+                    <CardContent sx={{ p: 2.5 }}>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
+                        <Box>
+                          <Typography variant="h3" sx={{ fontWeight: 700 }}>{member.name}</Typography>
+                          {member.isPrimary && <Chip label="Primary" size="small" sx={{ mt: 0.5 }} color="primary" />}
+                        </Box>
+                        <Chip label={member.relation === 'owner' ? 'Owner' : member.relation === 'tenant' ? 'Tenant' : 'Family'} size="small" color={member.relation === 'owner' ? 'primary' : member.relation === 'tenant' ? 'warning' : 'default'} />
+                      </Box>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                        <ApartmentIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                        <Typography variant="body2" color="text.secondary">{flats.find(f => f.id === member.flatId)?.flatNumber || '-'}</Typography>
+                      </Box>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                        <PhoneIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                        <Typography variant="body2" color="text.secondary">{member.phone}</Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </TabPanel>
       </Card>
 
